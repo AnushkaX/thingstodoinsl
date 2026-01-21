@@ -1,44 +1,45 @@
 import { useEffect, useState } from 'react';
 import SearchBar from './SearchBar';
+import { getAssetPath } from '../utils/paths';
 
 const slides = [
   {
-    src: '/carousel/1.webp',
+    src: getAssetPath('carousel/1.webp'),
     alt: 'Golden beaches in Sri Lanka',
     title: 'Discover What You Can Do in Sri Lanka',
     subtitle:
       'From golden beaches to misty mountains, find unforgettable experiences across the island.',
   },
   {
-    src: '/carousel/2.jpg',
+    src: getAssetPath('carousel/2.jpg'),
     alt: 'Sri Lankan hill country',
     title: 'Chase Sunrises in the Hill Country',
     subtitle:
       'Ride the scenic train, hike lush trails, and sip world-famous Ceylon tea.',
   },
   {
-    src: '/carousel/3.jpg',
+    src: getAssetPath('carousel/3.jpg'),
     alt: 'Sri Lanka cultural heritage',
     title: 'Walk Through Ancient Kingdoms',
     subtitle:
       'Explore temples, rock fortresses, and UNESCO heritage sites full of history.',
   },
   {
-    src: '/carousel/4.webp',
+    src: getAssetPath('carousel/4.webp'),
     alt: 'Wildlife safari in Sri Lanka',
     title: 'Go Wild on Safari',
     subtitle:
-      'Spot elephants, leopards, and exotic birds in Sri Lanka’s national parks.',
+      'Spot elephants, leopards, and exotic birds in Sri Lanka\'s national parks.',
   },
   {
-    src: '/carousel/5.webp',
+    src: getAssetPath('carousel/5.webp'),
     alt: 'Sri Lanka coast and ocean',
     title: 'Relax by the Indian Ocean',
     subtitle:
       'Swim, snorkel, or simply unwind on serene beaches around the island.',
   },
   {
-    src: '/carousel/6.jpg',
+    src: getAssetPath('carousel/6.jpg'),
     alt: 'Sri Lanka coastline at sunset',
     title: 'Plan Your Perfect Getaway',
     subtitle:

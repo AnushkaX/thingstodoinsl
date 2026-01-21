@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { getAssetPath } from '../utils/paths';
 
 interface SEOProps {
   title?: string;
@@ -15,7 +16,7 @@ export default function SEO({
   title = 'Discover Sri Lanka - Things to Do & Places to Visit',
   description = 'Discover amazing things to do, places to visit, and activities across Sri Lanka. Explore districts, activities, and plan your perfect Sri Lankan adventure.',
   keywords = 'Sri Lanka, travel, tourism, activities, places to visit, things to do, districts, attractions, beaches, hiking, wildlife, culture',
-  image = '/carousel/1.webp',
+  image = getAssetPath('carousel/1.webp'),
   type = 'website',
   url,
   structuredData,

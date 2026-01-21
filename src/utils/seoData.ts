@@ -1,10 +1,11 @@
 // SEO data and structured data generators for different pages
+import { getAssetPath } from './paths';
 
 export const defaultSEO = {
   title: 'Discover Sri Lanka - Things to Do & Places to Visit',
   description: 'Discover amazing things to do, places to visit, and activities across Sri Lanka. Explore districts, activities, and plan your perfect Sri Lankan adventure.',
   keywords: 'Sri Lanka, travel, tourism, activities, places to visit, things to do, districts, attractions, beaches, hiking, wildlife, culture',
-  image: '/carousel/1.webp',
+  image: getAssetPath('carousel/1.webp'),
 };
 
 export function generateWebsiteStructuredData() {
@@ -26,13 +27,14 @@ export function generateDistrictStructuredData(district: {
   id: string;
 }) {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
+  const basePath = typeof window !== 'undefined' ? import.meta.env.BASE_URL : '';
   return {
     '@context': 'https://schema.org',
     '@type': 'Place',
     name: district.name,
     description: district.description,
-    image: district.image || `${siteUrl}/carousel/1.webp`,
-    url: `${siteUrl}/district/${district.id}`,
+    image: district.image || `${siteUrl}${basePath}carousel/1.webp`,
+    url: `${siteUrl}${basePath}district/${district.id}`,
   };
 }
 
@@ -47,13 +49,14 @@ export function generateActivityStructuredData(activity: {
   duration?: string;
 }) {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
+  const basePath = typeof window !== 'undefined' ? import.meta.env.BASE_URL : '';
   return {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
     name: activity.name,
     description: activity.description,
-    image: activity.image || `${siteUrl}/carousel/1.webp`,
-    url: `${siteUrl}/activity/${activity.id}`,
+    image: activity.image || `${siteUrl}${basePath}carousel/1.webp`,
+    url: `${siteUrl}${basePath}activity/${activity.id}`,
     category: activity.category,
     ...(activity.bestSeason && { seasonalAvailability: activity.bestSeason }),
     ...(activity.skillLevel && { audience: { '@type': 'Audience', audienceType: activity.skillLevel } }),

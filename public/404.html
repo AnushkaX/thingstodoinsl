@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Sri Lanka</title>
+    <script>
+      // GitHub Pages 404 redirect for Single Page Apps
+      // This redirects all 404s to index.html for client-side routing
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      var path = l.pathname;
+      
+      // Extract repository name from path if present (for project pages)
+      // For user pages (username.github.io), there's no repo name
+      var repoMatch = path.match(/^\/([^\/]+)\//);
+      var ignorePaths = ['assets', 'src', 'dist', 'node_modules'];
+      
+      var basePath = '/';
+      if (repoMatch && !ignorePaths.includes(repoMatch[1])) {
+        basePath = '/' + repoMatch[1] + '/';
+      }
+      
+      // Redirect to index.html
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        basePath + 'index.html' + 
+        (l.search ? l.search : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>

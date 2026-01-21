@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { districts } from '../data';
 import type { District } from '../types';
 import { getDistrictPosition } from '../utils/mapCoordinates';
+import { getAssetPath } from '../utils/paths';
 
 interface MapProps {
   onDistrictClick?: (district: District) => void;
@@ -16,8 +17,8 @@ export default function SriLankaMap({ onDistrictClick, mapImageUrl }: MapProps) 
   const containerRef = useRef<HTMLDivElement>(null);
   const [imageLoaded, setImageLoaded] = useState(true); // SVG loads immediately
 
-  // Map SVG from public folder
-  const defaultMapImage = mapImageUrl || '/lk.svg';
+  // Map SVG from public folder - use base path for GitHub Pages
+  const defaultMapImage = mapImageUrl || getAssetPath('lk.svg');
 
   const handleDistrictClick = (district: District) => {
     if (onDistrictClick) {

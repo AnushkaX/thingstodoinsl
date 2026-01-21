@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import { districts } from '../data';
 import type { District } from '../types';
 import { MapPin } from 'lucide-react';
+import { getAssetPath } from '../utils/paths';
 
 export default function MapPage() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function MapPage() {
         title="Interactive Sri Lanka Map - Explore Districts & Activities"
         description="Explore Sri Lanka's districts on an interactive map. Click on any district to discover activities, places to visit, and plan your perfect Sri Lankan adventure."
         keywords="Sri Lanka map, districts, interactive map, travel guide, places to visit, Sri Lanka geography"
-        image="/lk.svg"
+        image={getAssetPath('lk.svg')}
         url={`${siteUrl}/map`}
       />
       <div className="min-h-screen pb-20 md:pb-0">
@@ -39,7 +40,7 @@ export default function MapPage() {
         <div className="bg-white rounded-xl shadow-xl overflow-hidden mb-6" style={{ height: '70vh', minHeight: '500px' }}>
           <SriLankaMap 
             onDistrictClick={handleDistrictClick} 
-            mapImageUrl="/lk.svg"
+            mapImageUrl={getAssetPath('lk.svg')}
           />
         </div>
 

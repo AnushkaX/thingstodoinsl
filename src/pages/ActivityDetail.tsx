@@ -4,6 +4,7 @@ import DistrictCard from '../components/DistrictCard';
 import SEO from '../components/SEO';
 import { activities, districts } from '../data';
 import { generateActivityStructuredData, generateBreadcrumbStructuredData } from '../utils/seoData';
+import { getAssetPath } from '../utils/paths';
 
 export default function ActivityDetail() {
   const { id } = useParams<{ id: string }>();
@@ -31,7 +32,7 @@ export default function ActivityDetail() {
         title={`${activity.name} in Sri Lanka - ${activity.category} | Discover Sri Lanka`}
         description={activity.description}
         keywords={`${activity.name}, ${activity.category}, Sri Lanka, travel, tourism, ${activity.districts.length} locations`}
-        image={activity.image || '/carousel/1.webp'}
+        image={activity.image || getAssetPath('carousel/1.webp')}
         url={`${siteUrl}/activity/${activity.id}`}
         structuredData={[
           generateActivityStructuredData(activity),

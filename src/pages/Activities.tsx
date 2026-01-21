@@ -4,6 +4,7 @@ import ActivityCard from '../components/ActivityCard';
 import SEO from '../components/SEO';
 import { activities } from '../data';
 import type { ActivityCategory } from '../types';
+import { getAssetPath } from '../utils/paths';
 
 export default function Activities() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -43,7 +44,7 @@ export default function Activities() {
         title={`${categoryTitle} in Sri Lanka | Discover Sri Lanka`}
         description={categoryDescription}
         keywords={`${selectedCategory || 'activities'}, Sri Lanka, travel, tourism, things to do, ${activities.length} activities`}
-        image="/carousel/1.webp"
+        image={getAssetPath('carousel/1.webp')}
         url={`${siteUrl}/activities${selectedCategory ? `?category=${selectedCategory}` : ''}`}
       />
       <div className="min-h-screen pb-20 md:pb-0 py-8">
