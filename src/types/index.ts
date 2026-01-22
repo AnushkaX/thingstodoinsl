@@ -8,7 +8,10 @@ export type ActivityCategory =
   | 'Wellness'
   | 'Water Sports'
   | 'Nature'
-  | 'Historical';
+  | 'Historical'
+  | 'City'
+  | 'Nightlife'
+  | 'Marine';
 
 export interface Place {
   id: string;

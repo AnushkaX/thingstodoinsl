@@ -3,12 +3,17 @@ import type { Activity } from '../types';
 
 interface ActivityCardProps {
   activity: Activity;
+  districtId?: string; // Optional district ID to show district-specific places
 }
 
-export default function ActivityCard({ activity }: ActivityCardProps) {
+export default function ActivityCard({ activity, districtId }: ActivityCardProps) {
+  const activityUrl = districtId 
+    ? `/activity/${activity.id}?district=${districtId}`
+    : `/activity/${activity.id}`;
+
   return (
     <Link
-      to={`/activity/${activity.id}`}
+      to={activityUrl}
       className="block bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
     >
       <div className="aspect-video overflow-hidden bg-gradient-to-br from-ocean-400 to-nature-400">
