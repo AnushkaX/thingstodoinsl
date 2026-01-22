@@ -440,7 +440,7 @@ export const activities: Activity[] = [
     category: 'Nature',
     image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
     bestSeason: 'Year-round (best during monsoon)',
-    skillLevel: 'Beginner to Intermediate',
+    skillLevel: 'Intermediate',
     duration: 'Half day',
     districts: ['badulla', 'rathnapura'],
     places: []
@@ -632,7 +632,7 @@ export const activities: Activity[] = [
     category: 'Adventure',
     image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
     bestSeason: 'Year-round',
-    skillLevel: 'Beginner to Intermediate',
+    skillLevel: 'Intermediate',
     duration: 'Half day',
     districts: ['anuradhapura', 'polonnaruwa'],
     places: []

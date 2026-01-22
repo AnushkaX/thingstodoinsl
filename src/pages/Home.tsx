@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Compass, Waves, Mountain, Camera, Utensils, Heart, TreePine } from 'lucide-react';
+import { Compass, Waves, Mountain, Camera, Utensils, Heart, TreePine, Building2, Moon, Anchor } from 'lucide-react';
 import HeroCarousel from '../components/HeroCarousel';
 import ActivityCard from '../components/ActivityCard';
 import DistrictCard from '../components/DistrictCard';
@@ -19,6 +19,9 @@ const categoryIcons: Record<ActivityCategory, any> = {
   'Water Sports': Waves,
   'Nature': TreePine,
   'Historical': Camera,
+  'City': Building2,
+  'Nightlife': Moon,
+  'Marine': Anchor,
 };
 
 const categories: ActivityCategory[] = [

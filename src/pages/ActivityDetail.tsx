@@ -37,7 +37,6 @@ export default function ActivityDetail() {
     if (!district || !activity.places) return [];
     
     // Filter places that belong to this district and are in the activity's places list
-    const districtPlaceIds = district.places?.map(p => p.id) || [];
     const activityPlaceIds = activity.places || [];
     
     return district.places?.filter(place => 
